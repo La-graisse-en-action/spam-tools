@@ -13,6 +13,7 @@
  * @param {string | string[]} messageToSend
  */
 async function sendMessage(messageToSend) {
+	if (!messageToSend) throw new Error('Message to send is required');
 	try {
 		/**
 		 * Lines of the message to send
@@ -28,7 +29,7 @@ async function sendMessage(messageToSend) {
 		}
 
 		(main = document.querySelector('#main')), (textarea = main.querySelector(`div[contenteditable="true"]`));
-		if (!textarea) throw new Error('Não há uma conversa aberta');
+		if (!textarea) throw new Error('Textarea not found');
 
 		for (const line of lines) {
 			textarea.focus();

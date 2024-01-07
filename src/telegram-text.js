@@ -13,6 +13,8 @@
  * @param {string | string[]} textToSend
  */
 function sendMessage(textToSend) {
+	if (!textToSend) throw new Error('Message to send is required');
+
 	const inputMessage = document.getElementsByClassName('input-message-input')[0];
 	const sendButton = document.getElementsByClassName('btn-send')[0];
 	/** @type {string[]} messageContent */
