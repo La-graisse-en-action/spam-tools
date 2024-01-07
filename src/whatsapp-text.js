@@ -31,7 +31,6 @@ async function sendMessage(messageToSend) {
 		if (!textarea) throw new Error('Não há uma conversa aberta');
 
 		for (const line of lines) {
-			console.log(line);
 			textarea.focus();
 			/**
 			 * This function is deprecated but is the only way to send a message
